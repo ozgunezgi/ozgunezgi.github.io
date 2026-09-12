@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Özgün Ezgi Sevgili</title>
+<meta name="description" content="Industrial engineer working on pricing and optimization products. M.Sc. Management & Technology at TU Munich from October 2026.">
+<!-- Site arama motorlarına kapalı. Yayına hazır olunca aşağıdaki satırı sil. -->
+<meta name="robots" content="noindex, nofollow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- renkler / ölçüler ---------- */
+:root{
+  --paper:#E7ECF0;
+  --paper-2:#F4F7F9;
+  --ink:#13293D;
+  --ink-soft:#4A6076;
+  --rule:#C3D0DA;
+  --amber:#E09400;
+  --maxw:64rem;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(to right, rgba(19,41,61,.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(19,41,61,.055) 1px, transparent 1px);
+  background-size:28px 28px;
+  color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.62;
+}
+a{color:inherit;text-decoration:none;
+  background-image:linear-gradient(var(--amber),var(--amber));
+  background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;padding-bottom:1px}
+a:hover{background-size:100% 100%}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
+
+/* ---------- üst bölüm: fotoğraf + isim ---------- */
+header{padding:clamp(3rem,9vw,6rem) 0 clamp(2.5rem,6vw,4rem)}
+.intro{display:grid;grid-template-columns:auto 1fr;gap:2.4rem;align-items:start}
+.portrait{
+  width:clamp(7rem,16vw,11rem);
+  aspect-ratio:1;border-radius:50%;object-fit:cover;display:block;
+  border:1px solid var(--rule);
+}
+h1{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;
+  font-size:clamp(2.6rem,7vw,4.6rem);
+  line-height:.96;letter-spacing:-.035em;
+  margin:0 0 1.3rem;max-width:14ch;
+}
+.lede{font-size:clamp(1.05rem,2vw,1.25rem);max-width:48ch;margin:0 0 1.4rem}
+.now{
+  display:inline-block;border-left:3px solid var(--amber);
+  padding:.15rem 0 .15rem .8rem;color:var(--ink-soft);font-size:.95rem;max-width:46ch
+}
+nav{margin-top:2.2rem;display:flex;flex-wrap:wrap;gap:1.4rem;font-size:.95rem}
+
+/* ---------- bölümler ---------- */
+section{padding:clamp(2.5rem,6vw,4rem) 0;border-top:1px solid var(--rule)}
+h2{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;
+  font-size:1.15rem;letter-spacing:-.01em;margin:0 0 2rem;color:var(--ink-soft)
+}
+
+/* sol tarih, sağ içerik */
+.row{display:grid;grid-template-columns:11rem 1fr;gap:1.2rem 2rem;margin-bottom:2.6rem}
+.row:last-child{margin-bottom:0}
+.when{color:var(--ink-soft);font-size:.9rem;padding-top:.35rem;font-variant-numeric:tabular-nums}
+.role{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.22rem;margin:0 0 .1rem;letter-spacing:-.01em}
+.org{margin:0 0 .7rem;color:var(--ink-soft);font-size:.95rem}
+.row ul{margin:0;padding-left:1.05rem;max-width:66ch}
+.row li{margin-bottom:.45rem}
+.row li::marker{color:var(--amber)}
+.row p.body{margin:0;max-width:66ch}
+
+/* öne çıkan sayı */
+.metric{
+  display:block;background:var(--paper-2);border:1px solid var(--rule);
+  padding:1.1rem 1.3rem;margin:1rem 0 0;max-width:34rem
+}
+.metric b{
+  font-family:"Bricolage Grotesque",sans-serif;font-size:2.5rem;font-weight:800;
+  letter-spacing:-.03em;line-height:1;display:block;margin-bottom:.3rem
+}
+.metric span{color:var(--ink-soft);font-size:.95rem}
+
+.aside{color:var(--ink-soft);font-size:.95rem;max-width:60ch;margin:2.4rem 0 0}
+
+footer{border-top:1px solid var(--rule);padding:3rem 0 4.5rem}
+.contact{display:flex;flex-wrap:wrap;gap:1.6rem;font-size:1.05rem;margin-bottom:1.6rem}
+.colophon{color:var(--ink-soft);font-size:.85rem;margin:0}
+
+@media (max-width:680px){
+  .intro{grid-template-columns:1fr;gap:1.6rem}
+  .row{grid-template-columns:1fr;gap:.5rem}
+  .when{padding-top:0;order:-1}
+  h2{margin-bottom:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<header class="wrap">
+  <div class="intro">
+    <img class="portrait" src="portrait.jpg" alt="Özgün Ezgi Sevgili">
+    <div>
+      <h1>Özgün Ezgi Sevgili</h1>
+      <!-- Bu iki cümle sitenin sesi, kendi cümlelerinle değiştir. -->
+      <p class="lede">Industrial engineer. I work on pricing, promotion and markdown optimization products — mostly where retail data, optimization models and LLMs meet.</p>
+      <p class="now">Starting the M.Sc. in Management &amp; Technology at TU Munich in October 2026, majoring in computer engineering with operations &amp; supply chain management.</p>
+      <nav>
+        <a href="#work">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="cv.pdf">CV (PDF)</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section id="work" class="wrap">
+  <h2>Experience</h2>
+
+  <div class="row">
+    <div class="when">Oct 2025 — present</div>
+    <div>
+      <p class="role">Junior Business Analyst</p>
+      <p class="org">Invent.ai, Ankara</p>
+      <ul>
+        <li>Product management team for pricing, promotion and markdown optimization; data and decision analysis on large retail datasets to support product development.</li>
+        <li>Designed and implemented an AI reasoning agent pipeline for markdown optimization, combining SQL-based decision analysis with LLM inference so that every recommendation comes with the reasoning behind it.</li>
+        <li>Built the AI assistant flow and insight layer of a merchandise assortment planning product, turning last season's data into insights, risk warnings and recommended actions for planners.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">Feb 2025 — Sep 2025</div>
+    <div>
+      <p class="role">Business Analyst</p>
+      <p class="org">Yapı Kredi Teknoloji, Istanbul — intern, then assistant business analyst</p>
+      <ul>
+        <li>Owned the open banking feature in the bank's mobile app from analysis to release: wrote the functional analysis document, coordinated development, ran the test and UAT cycles, and took it to production.</li>
+        <li>Worked in the Digital Channels Assets and Insurances team on Scrum projects — data modelling, test scenario design and user acceptance testing with SQL, JIRA, Confluence and Kibana.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">Jul 2024 — Aug 2024</div>
+    <div>
+      <p class="role">Research Intern</p>
+      <p class="org">University of Groningen — Bernoulli Institute, Erasmus mobility</p>
+      <ul>
+        <li>Probability and Statistics unit, supervised by Assist. Prof. Gilles Bonnet.</li>
+        <li>Applied graph theory, stochastic processes and optimal transport to random nanowire networks, translating the mathematics into design implications.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">May 2023 — Feb 2024</div>
+    <div>
+      <p class="role">Undergraduate Researcher</p>
+      <p class="org">Bilkent University — TÜBİTAK 2247-C scholarship</p>
+      <ul>
+        <li>Project: Active Learning in Large Scale Vector Optimization Problems, supervised by Assoc. Prof. Cem Tekin.</li>
+        <li>Bayesian optimization, evolutionary algorithms and active learning for multi-objective black-box problems.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="aside">Earlier: a digitalization internship at Bosch (Power Apps interface and Power BI dashboard for quality management) and a semester as student assistant for METU's engineering statistics course. Both are in the <a href="cv.pdf">CV</a>.</p>
+</section>
+
+<section id="projects" class="wrap">
+  <h2>Projects</h2>
+
+  <div class="row">
+    <div class="when">Oct 2024 — Jun 2025</div>
+    <div>
+      <p class="role">Dynamic planning of shared scooter field operations</p>
+      <p class="org">Senior system design project with Hop Teknoloji</p>
+      <p class="body">A 2,000-scooter fleet needs battery swaps and repositioning every shift, and the field teams were deciding what to do next by eye. We built a decision support system that chooses the tasks for a shift and sequences them, replacing manual routing with an optimization-based approach.</p>
+      <p class="metric">
+        <b>+70.4%</b>
+        <span>field productivity in tasks per kilometre driven, and 40% fewer scooters left stranded at critical battery levels.</span>
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">May 2022 — Mar 2023</div>
+    <div>
+      <p class="role">W'EQUAL</p>
+      <p class="org">METU Productivity Club — project lead</p>
+      <p class="body">An initiative on the inequalities people meet in social, personal and professional life. I directed a 55-person organization team and ran a seminar with 14 speakers and over 1,000 registrations — schedule, speakers and sponsorship.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">Oct 2020 — Oct 2022</div>
+    <div>
+      <p class="role">Course translation</p>
+      <p class="org">Coursera Global Translator Community</p>
+      <p class="body">Translated courses into Turkish from English and Korean, including Gender, Family, and Social Change in Contemporary South Korea and Mathematics for Machine Learning and Data Science. Still the most useful way I've found to actually learn a language.</p>
+    </div>
+  </div>
+</section>
+
+<section id="education" class="wrap">
+  <h2>Education</h2>
+
+  <div class="row">
+    <div class="when">From Oct 2026</div>
+    <div>
+      <p class="role">M.Sc. Management &amp; Technology</p>
+      <p class="org">Technical University of Munich — computer engineering major, operations &amp; supply chain management</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="when">2019 — 2025</div>
+    <div>
+      <p class="role">B.S. Industrial Engineering</p>
+      <p class="org">Middle East Technical University, Ankara — GPA 3.45/4.00, Honors</p>
+      <p class="body">Productivity Club and the taekwondo team on the side. Python, SQL and Gurobi/CPLEX are what I reach for; Turkish and English daily, Korean at TOPIK level 5.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer id="contact" class="wrap">
+  <div class="contact">
+    <a href="mailto:ozgunezgisevgili@gmail.com">ozgunezgisevgili@gmail.com</a>
+    <a href="https://linkedin.com/in/ozgunezgi">LinkedIn</a>
+    <a href="https://github.com/ozgunezgi">GitHub</a>
+    <a href="cv.pdf">CV (PDF)</a>
+  </div>
+  <p class="colophon">Last updated September 2026.</p>
+</footer>
+
+</body>
+</html>
