@@ -126,7 +126,7 @@ p{max-width:62ch;margin:0 0 1.1rem}
 .project .meta{color:var(--ink-soft);font-size:.9rem;margin:0 0 .7rem}
 .metric{
   display:block;background:var(--paper-2);border:1px solid var(--rule);
-  padding:1rem 1.2rem;margin:.9rem 0 0;
+  padding:1.2rem 1.4rem;margin:1.2rem 0 1.8rem;max-width:34rem;
 }
 .metric b{
   font-family:"Bricolage Grotesque",sans-serif;font-size:2.3rem;font-weight:800;
@@ -247,6 +247,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <li>Artificial intelligence</li>
         <li>Decision science</li>
         <li>Analytics</li>
+        <li>Machine learning</li>
         <li>Decision-making under uncertainty</li>
       </ul>
 
@@ -274,13 +275,13 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
       <div class="project">
         <h4>Dynamic planning of shared scooter field operations</h4>
         <p class="meta">Senior system design project, METU Industrial Engineering, 2024–25. Six-person team, in partnership with Hop Teknoloji.</p>
-        <p class="meta" style="margin-top:-.4rem"><a href="poster.pdf">Poster (in Turkish)</a></p>
         <p>A 2,000-scooter fleet needs battery swaps and repositioning every shift, and the field teams were deciding what to do next by eye: which scooter, in what order, on which route. We built a decision support system that selects the tasks worth doing in a shift and sequences them, replacing manual routing with an optimization-based approach that the operator could run each morning.</p>
         <p class="metric">
           <b>+70.4%</b>
           <span>field productivity in tasks per kilometre driven, and 40% fewer scooters left stranded at critical battery levels.</span>
         </p>
         <p>The system works in three stages and replans as the shift goes. Stations close enough to walk between are grouped with DBSCAN and scored on how full they are, and the ones that need attention become a route through a travelling salesman problem (TSP). Each scooter is then assigned to its nearest station, which turns the map into work clusters. Inside the current cluster, a mixed-integer linear program (MILP) decides which scooters are worth visiting and in what order, trading travel distance against a penalty for leaving a task undone. It solves in a couple of seconds, so the plan is recomputed every time a station is finished, with whatever the map looks like at that moment.</p>
+        <p class="meta"><a href="poster.pdf">Poster (in Turkish)</a></p>
       </div>
 
     </section>
