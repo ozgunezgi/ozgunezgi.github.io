@@ -252,7 +252,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
 
       <h3>Work</h3>
       <div class="project">
-        <h4>Random nanowire networks</h4>
+        <h4>Probabilistic analysis of random networks</h4>
         <p class="meta"><a href="https://www.rug.nl/">University of Groningen</a>, Bernoulli Institute, summer 2024. Supervised by Assist. Prof. Gilles Bonnet.</p>
         <p>Nanowire networks conduct electricity through wires thrown down at random, which makes their electrical behaviour hard to predict. I modelled the network as a random graph: wire centres uniform on the unit square, orientations uniform, junctions as vertices. Working on the torus, I derived the intersection probability of two wires analytically and checked it against Monte Carlo simulation, which gives the expected number of junctions for a given wire count and length.</p>
         <p>From there the question becomes a resistance distance problem, which is where the operations research side comes in. Resistance distance is a graph-theoretic quantity that also turns up in flow and network problems, and I computed it through the Moore-Penrose pseudoinverse of the graph Laplacian, using the equivalence between resistance and the commute times of random walks to reason about the network without simulating every path. The literature review ran from percolation theory to optimal transport, which turns out to connect back to effective resistance on graphs.</p>
@@ -275,6 +275,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <h4>Dynamic planning of shared scooter field operations</h4>
         <p class="meta">Senior system design project, METU Industrial Engineering, 2024–25. Six-person team, in partnership with Hop Teknoloji.</p>
         <p>A 2,000-scooter fleet needs battery swaps and repositioning every shift, and the field teams were deciding what to do next by eye: which scooter, in what order, on which route. We built a decision support system that selects the tasks worth doing in a shift and sequences them, replacing manual routing with an optimization-based approach that the operator could run each morning.</p>
+        <p>The system works in three stages and replans as the shift goes. Stations close enough to walk between are grouped with DBSCAN and scored on how full they are, and the ones that need attention become a route through a travelling salesman problem (TSP). Each scooter is then assigned to its nearest station, which turns the map into work clusters. Inside the current cluster, a mixed-integer model (MIP) decides which scooters are worth visiting and in what order, trading travel distance against the cost of leaving a task undone. It solves in a couple of seconds, so the plan is recomputed every time a station is finished rather than fixed the night before.</p>
         <p class="metric">
           <b>+70.4%</b>
           <span>field productivity in tasks per kilometre driven, and 40% fewer scooters left stranded at critical battery levels.</span>
@@ -285,15 +286,16 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
 
     <section class="panel" id="personal" hidden>
       <h2>Personal</h2>
+      
+      <h3>Some fun facts about me:</h3>
       <p>I grew up in a small town in Türkiye. In high school I started commuting to Eskişehir every day, and somehow those long drives became one of my favourite parts of that time. I still love a good road trip.</p>
 
       <p>Both sides of my family go back generations to Bulgaria, and my grandfather was born there. I grew up surrounded by that Balkan culture, and it still shows in the small, warm rituals I never want to lose, like putting on a martenitsa every March.</p>
 
       <p>The pandemic hit partway through my first year of university, so much of the first couple of years happened in front of a screen at home instead of classrooms.</p>
 
-      <p>I care about human rights, animal rights and gender equality, and about keeping myself and the people around me educated on all three.</p>
+      <p>I deeply care about human rights, animal rights and gender equality, and about keeping myself and the people around me educated on all three.</p>
 
-      <h3>Fun facts about me</h3>
       <p>I taught myself Korean, almost to a high level, starting purely from watching K-dramas, which still makes me laugh a little. Learning languages has become one of my favourite hobbies. I am very excited about learning German these days.</p>
 
       <p>Travelling is the first thing I reach for with free time. My last trip was to Japan, and Kyoto climbed high up my list of favourite cities.</p>
