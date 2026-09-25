@@ -123,7 +123,26 @@ p{max-width:62ch;margin:0 0 1.1rem}
   font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.25rem;
   letter-spacing:-.01em;margin:0 0 .15rem;
 }
-.project .meta{color:var(--ink-soft);font-size:.9rem;margin:0 0 .7rem}
+.meta{color:var(--ink-soft);font-size:.9rem;margin:0 0 .7rem}
+/* açılır kapanır kayıtlar (Research ve Projects) */
+.entry{border-top:1px solid var(--rule);padding:1.1rem 0}
+.entry:first-of-type{border-top:0;padding-top:.2rem}
+.entry summary{list-style:none;cursor:pointer;display:flex;gap:.7rem;align-items:flex-start}
+.entry summary::-webkit-details-marker{display:none}
+.entry summary::before{
+  content:"";width:.45rem;height:.45rem;flex:0 0 auto;margin-top:.55rem;
+  border-right:1.5px solid var(--ink-soft);border-bottom:1.5px solid var(--ink-soft);
+  transform:rotate(-45deg);transition:transform .15s;
+}
+.entry[open] summary::before{transform:rotate(45deg)}
+.entry .e-title{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:1.22rem;
+  letter-spacing:-.01em;display:block;margin-bottom:.15rem;
+}
+.entry summary .meta{margin:0}
+.entry .e-body{margin-top:1rem;padding-left:1.15rem}
+.entry .e-body p:last-child{margin-bottom:0}
+
 .metric{
   display:block;background:var(--paper-2);border:1px solid var(--rule);
   padding:1.2rem 1.4rem;margin:1.2rem 0 1.8rem;max-width:34rem;
@@ -278,8 +297,9 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
           <p>From there the question becomes a resistance distance problem, which is where the operations research side comes in. Resistance distance is a graph-theoretic quantity that also turns up in flow and network problems, and I computed it from the graph Laplacian, using the equivalence between resistance and the commute times of random walks to reason about the network without simulating every path. The literature review ran from percolation theory to optimal transport, which turns out to connect back to effective resistance on graphs.</p>
         </div>
       </details>
+    </section>
 
-      <section class="panel" id="projects" hidden>
+    <section class="panel" id="projects" hidden>
       <h2>Projects</h2>
  
       <details class="entry">
