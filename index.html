@@ -252,37 +252,53 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
       </ul>
 
       <h3>Work</h3>
-      <div class="project">
-        <h4>Probabilistic analysis of random networks</h4>
-        <p class="meta"><a href="https://www.rug.nl/">University of Groningen</a>, Bernoulli Institute, summer 2024. Supervised by Assist. Prof. Gilles Bonnet.</p>
-        <p>Nanowire networks conduct electricity through wires thrown down at random, which makes their electrical behaviour hard to predict. I modelled the network as a random graph: wire centres uniform on the unit square, orientations uniform, junctions as vertices. Working on the torus, I derived the intersection probability of two wires analytically and checked it against Monte Carlo simulation, which gives the expected number of junctions for a given wire count and length.</p>
-        <p>From there the question becomes a resistance distance problem, which is where the operations research side comes in. Resistance distance is a graph-theoretic quantity that also turns up in flow and network problems, and I computed it from the graph Laplacian, using the equivalence between resistance and the commute times of random walks to reason about the network without simulating every path. The literature review ran from percolation theory to optimal transport, which turns out to connect back to effective resistance on graphs.</p>
-        <!-- Raporu yayınlamak istersen: dosyayı repoya koyup bu satırı aç
-        <p class="meta"><a href="groningen-report.pdf">Internship report (PDF)</a></p> -->
-      </div>
+ 
+      <details class="entry">
+        <summary>
+          <div>
+            <span class="e-title">Active learning in large scale vector optimization problems</span>
+            <p class="meta"><a href="https://w3.bilkent.edu.tr/bilkent/">Bilkent University</a>, 2023–24. TÜBİTAK 2247-C scholarship, supervised by Assoc. Prof. Cem Tekin.</p>
+          </div>
+        </summary>
+        <div class="e-body">
+          <p>Joint Entropy Search is a Bayesian optimization method for expensive black-box functions, but it assumes the usual componentwise comparison of objectives. We extended it to vector optimization, which generalizes multi-objective optimization through orderings induced by convex cones, so the set of optimal points grows or shrinks with the cone angle.</p>
+          <p>Two pieces had to be rebuilt. Box decomposition, which JES uses to compute the cumulative distribution, does not survive the switch to cones, so I worked on a replacement using confidence ellipsoids, bounding boxes and a matrix representation of the cone. NSGA-II, used inside the method to find the Pareto set, needed its dominance comparisons redefined before it would return cone-based Pareto points.</p>
+        </div>
+      </details>
+ 
+      <details class="entry">
+        <summary>
+          <div>
+            <span class="e-title">Probabilistic analysis of random networks</span>
+            <p class="meta"><a href="https://www.rug.nl/">University of Groningen</a>, Bernoulli Institute, summer 2024. Supervised by Assist. Prof. Gilles Bonnet.</p>
+          </div>
+        </summary>
+        <div class="e-body">
+          <p>Nanowire networks conduct electricity through wires thrown down at random, which makes their electrical behavior hard to predict. I modelled the network as a random graph: wire centers uniform on the unit square, orientations uniform, junctions as vertices. Working on the torus, I derived the intersection probability of two wires analytically and checked it against Monte Carlo simulation, which gives the expected number of junctions for a given wire count and length.</p>
+          <p>From there the question becomes a resistance distance problem, which is where the operations research side comes in. Resistance distance is a graph-theoretic quantity that also turns up in flow and network problems, and I computed it from the graph Laplacian, using the equivalence between resistance and the commute times of random walks to reason about the network without simulating every path. The literature review ran from percolation theory to optimal transport, which turns out to connect back to effective resistance on graphs.</p>
+        </div>
+      </details>
 
-      <div class="project">
-        <h4>Active learning in large scale vector optimization problems</h4>
-        <p class="meta"><a href="https://w3.bilkent.edu.tr/bilkent/">Bilkent University</a>, 2023–24. TÜBİTAK 2247-C scholarship, supervised by Assoc. Prof. Cem Tekin.</p>
-        <p>Joint Entropy Search is a Bayesian optimization method for expensive black-box functions, but it assumes the usual componentwise comparison of objectives. We extended it to vector optimization, which generalises multi-objective optimization through orderings induced by convex cones, so the set of optimal points grows or shrinks with the cone angle.</p>
-        <p>Two pieces had to be rebuilt. Box decomposition, which JES uses to compute the cumulative distribution, does not survive the switch to cones, so I worked on a replacement using confidence ellipsoids, bounding boxes and a matrix representation of the cone. NSGA-II, used inside the method to find the Pareto set, needed its dominance comparisons redefined before it would return cone-based Pareto points.</p>
-      </div>
-    </section>
-
-    <section class="panel" id="projects" hidden>
+      <section class="panel" id="projects" hidden>
       <h2>Projects</h2>
-
-      <div class="project">
-        <h4>Dynamic planning of shared scooter field operations</h4>
-        <p class="meta">Senior system design project, METU Industrial Engineering, 2024–25. Six-person team, in partnership with Hop Teknoloji.</p>
-        <p>A 2,000-scooter fleet needs battery swaps and repositioning every shift, and the field teams were deciding what to do next by eye: which scooter, in what order, on which route. We built a decision support system that selects the tasks worth doing in a shift and sequences them, replacing manual routing with an optimization-based approach that the operator could run each morning.</p>
-        <p class="metric">
-          <b>+70.4%</b>
-          <span>field productivity in tasks per kilometre driven, and 40% fewer scooters left stranded at critical battery levels.</span>
-        </p>
-        <p>The system works in three stages and replans as the shift goes. Stations close enough to walk between are grouped with DBSCAN and scored on how full they are, and the ones that need attention become a route through a travelling salesman problem (TSP). Each scooter is then assigned to its nearest station, which turns the map into work clusters. Inside the current cluster, a mixed-integer linear program (MILP) decides which scooters are worth visiting and in what order, trading travel distance against a penalty for leaving a task undone. It solves in a couple of seconds, so the plan is recomputed every time a station is finished, with whatever the map looks like at that moment.</p>
-        <p class="meta"><a href="poster.pdf">Poster (in Turkish)</a></p>
-      </div>
+ 
+      <details class="entry">
+        <summary>
+          <div>
+            <span class="e-title">Dynamic planning of shared scooter field operations</span>
+            <p class="meta">Senior system design project, METU Industrial Engineering, 2024–25. Six-person team, in partnership with Hop Teknoloji.</p>
+          </div>
+        </summary>
+        <div class="e-body">
+          <p>A 2,000-scooter fleet needs battery swaps and repositioning every shift, and the field teams were deciding what to do next by eye: which scooter, in what order, on which route. We built a decision support system that selects the tasks worth doing in a shift and sequences them, replacing manual routing with an optimization-based approach that the operator could run each morning.</p>
+          <p class="metric">
+            <b>+70.4%</b>
+            <span>field productivity in tasks per kilometer driven, and 40% fewer scooters left stranded at critical battery levels.</span>
+          </p>
+          <p>The system works in three stages and replans as the shift goes. Stations close enough to walk between are grouped with DBSCAN and scored on how full they are, and the ones that need attention become a route through a traveling salesman problem (TSP). Each scooter is then assigned to its nearest station, which turns the map into work clusters. Inside the current cluster, a mixed-integer linear program (MILP) decides which scooters are worth visiting and in what order, trading travel distance against a penalty for leaving a task undone. It solves in a couple of seconds, so the plan is recomputed every time a station is finished, with whatever the map looks like at that moment.</p>
+          <p class="meta"><a href="poster.pdf">Poster (in Turkish)</a></p>
+        </div>
+      </details>
 
     </section>
 
