@@ -13,11 +13,11 @@
 
 <style>
 :root{
-  --paper:#F3F6F8;
-  --paper-2:#FFFFFF;
+  --paper:#FFFFFF;
+  --paper-2:#F1F1EF;
   --ink:#13293D;
   --ink-soft:#4A6076;
-  --rule:#D4DEE6;
+  --rule:#E3E3E0;
   --amber:#E09400;
 }
 
@@ -30,8 +30,8 @@ body{
   margin:0;
   background-color:var(--paper);
   background-image:
-    linear-gradient(to right, rgba(19,41,61,.045) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(19,41,61,.045) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0,0,0,.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,.035) 1px, transparent 1px);
   background-size:28px 28px;
   color:var(--ink);
   font-family:"IBM Plex Sans",system-ui,sans-serif;
@@ -46,7 +46,7 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 /* ---------- üstteki sekme çubuğu ---------- */
 .topbar{
   position:sticky;top:0;z-index:10;
-  background:rgba(243,246,248,.92);
+  background:rgba(255,255,255,.92);
   backdrop-filter:blur(6px);
   border-bottom:1px solid var(--rule);
 }
@@ -107,7 +107,7 @@ h3{
 p{max-width:62ch;margin:0 0 1.1rem}
 .interests{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
 .interests li{
-  background:var(--paper-2);border:1px solid var(--rule);
+  background:var(--paper-2);border:1px solid transparent;border-radius:6px;
   padding:.3rem .8rem;font-size:.95rem;
 }
 .edu{margin:0;display:grid;grid-template-columns:8.5rem 1fr;gap:.7rem 1.4rem;max-width:52rem}
@@ -144,7 +144,7 @@ p{max-width:62ch;margin:0 0 1.1rem}
 .entry .e-body p:last-child{margin-bottom:0}
 
 .metric{
-  display:block;background:var(--paper-2);border:1px solid var(--rule);
+  display:block;background:var(--paper-2);border:0;border-radius:10px;
   padding:1.2rem 1.4rem;margin:1.2rem 0 1.8rem;max-width:34rem;
 }
 .metric b{
@@ -152,6 +152,25 @@ p{max-width:62ch;margin:0 0 1.1rem}
   letter-spacing:-.03em;line-height:1;display:block;margin-bottom:.25rem;
 }
 .metric span{color:var(--ink-soft);font-size:.93rem}
+
+/* oyunu yeni sekmede açan kart (metric kutusuyla aynı aile) */
+.launch{
+  display:flex;align-items:center;justify-content:space-between;gap:1.2rem;
+  background:var(--paper-2);border-radius:10px;
+  padding:1.1rem 1.3rem;margin:.2rem 0 1.4rem;max-width:62ch;
+  background-image:none;padding-bottom:1.1rem;
+}
+.launch{transition:background-color .15s}
+.launch:hover{background-size:auto;background-color:#E8E8E5}
+.launch .arr{transition:background-color .15s, color .15s}
+.launch:hover .arr{background:var(--ink);color:#fff}
+.launch b{display:block;color:var(--ink);font-weight:600;font-size:1.25rem;letter-spacing:-.015em;line-height:1.2}
+.launch span{display:block;color:var(--ink-soft);font-size:.9rem}
+.launch .arr{
+  display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;flex:0 0 auto;
+  background:var(--paper);color:var(--ink);font-size:1.15rem;line-height:1;
+}
+
 
 .cats{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin:2.4rem 0 .5rem;text-align:center;max-width:62ch}
 .cats figure{margin:0;width:7.5rem;text-align:center}
@@ -276,12 +295,13 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <summary>
           <div>
             <span class="e-title">Active learning in large scale vector optimization problems</span>
-            <p class="meta"><a href="https://w3.bilkent.edu.tr/bilkent/">Bilkent University</a>, 2023–24. TÜBİTAK 2247-C scholarship, supervised by Assoc. Prof. Cem Tekin.</p>
+            <p class="meta"><a href="https://w3.bilkent.edu.tr/bilkent/">Bilkent University</a>, 2023–24. Supervised by Assoc. Prof. Cem Tekin.</p>
           </div>
         </summary>
         <div class="e-body">
           <p>Joint Entropy Search is a Bayesian optimization method for expensive black-box functions, but it assumes the usual componentwise comparison of objectives. We extended it to vector optimization, which generalizes multi-objective optimization through orderings induced by convex cones, so the set of optimal points grows or shrinks with the cone angle.</p>
           <p>Two pieces had to be rebuilt. Box decomposition, which JES uses to compute the cumulative distribution, does not survive the switch to cones, so I worked on a replacement using confidence ellipsoids, bounding boxes and a matrix representation of the cone. NSGA-II, used inside the method to find the Pareto set, needed its dominance comparisons redefined before it would return cone-based Pareto points.</p>
+          <p class="meta">This work was funded by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) under the 2247-C Intern Researcher Scholarship Program.</p>
         </div>
       </details>
  
@@ -289,7 +309,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <summary>
           <div>
             <span class="e-title">Probabilistic analysis of random networks</span>
-            <p class="meta"><a href="https://www.rug.nl/">University of Groningen</a>, Bernoulli Institute, summer 2024. Supervised by Assist. Prof. Gilles Bonnet.</p>
+            <p class="meta"><a href="https://www.rug.nl/">University of Groningen</a>, <a href="https://www.rug.nl/research/bernoulli/">Bernoulli Institute</a>, summer 2024. Supervised by Assist. Prof. Gilles Bonnet.</p>
           </div>
         </summary>
         <div class="e-body">
@@ -301,6 +321,24 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
 
     <section class="panel" id="projects" hidden>
       <h2>Projects</h2>
+
+      <details class="entry">
+        <summary>
+          <div>
+            <span class="e-title">Computing, learning and playing equilibria in games</span>
+            <p class="meta">A browser game about Nash equilibrium, 2026.</p>
+          </div>
+        </summary>
+        <div class="e-body">
+          <a class="launch" href="https://ozgunezgi.github.io/equilibrium-puzzles/" target="_blank" rel="noopener">
+            <span><b>Equilibrium puzzles</b><span>Open the game in a new tab</span></span>
+            <span class="arr" aria-hidden="true">↗</span>
+          </a>
+          <p>A Nash equilibrium is an outcome in which no player can do better by changing only their own move. The game is built around finding one. Its first part takes small games from the literature, from the Prisoner's Dilemma and Matching Pennies to penalty kicks and the Battle of the Sexes, and asks for the cell, or the mix of moves, that nobody wants to leave. Every puzzle can also be handed to two learning algorithms, to see whether they reach the same answer just by playing.</p>
+          <p>The second part turns those algorithms into characters. Eight opponents play Rock-Paper-Scissors by hidden rules, and the task is to beat each one and then name its rule. The same characters meet again in an Axelrod-style tournament, and in an evolution mode where strategies that earn more than the average spread through a population, which shows when cooperation survives and when it collapses.</p>
+          <p>Behind the game are <a href="https://github.com/ozgunezgi/equilibrium-puzzles" target="_blank" rel="noopener">notebooks</a> that build each piece step by step and test it against an independent implementation: linear programming for zero-sum games, support enumeration for general games, and three learning rules, fictitious play, regret matching and Q-learning.</p>
+        </div>
+      </details>
  
       <details class="entry">
         <summary>
