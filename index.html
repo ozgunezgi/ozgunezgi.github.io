@@ -43,7 +43,6 @@ a{color:inherit;text-decoration:none;
 a:hover{background-size:100% 100%}
 a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
 
-/* ---------- üstteki sekme çubuğu ---------- */
 .topbar{
   position:sticky;top:0;z-index:10;
   background:rgba(255,255,255,.92);
@@ -64,26 +63,24 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 .topbar a{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;font-size:1rem;
   color:var(--ink-soft);
-  background-image:none;              /* sekmelerle aynı dursun, altı çizili olmasın */
+  background-image:none;
   padding:.35rem 0;
   border-bottom:2px solid transparent;
 }
 .topbar a:hover{color:var(--ink);border-bottom-color:var(--rule)}
 
-/* ---------- yerleşim ---------- */
 .page{
   max-width:70rem;margin:0 auto;padding:2.6rem 1.5rem 5rem;
   display:grid;grid-template-columns:16rem 1fr;gap:3.5rem;align-items:start;
 }
 
-/* ---------- sol kimlik kartı ---------- */
 .card{position:sticky;top:5.2rem}
 .portrait{
   width:11rem;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block;
   border:1px solid var(--rule);margin-bottom:1.4rem;
 }
 .card h1{
-  /* isim, gövde yazı tipinde: okunması daha kolay */
+
   font-family:"IBM Plex Sans",system-ui,sans-serif;
   font-weight:600;font-size:1.7rem;line-height:1.15;letter-spacing:-.015em;
   margin:0 0 .5rem;
@@ -93,7 +90,6 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
 .card li{margin-bottom:.6rem;display:flex;align-items:center;gap:.6rem}
 .ico{width:16px;height:16px;flex:0 0 16px;color:var(--ink)}
 
-/* ---------- sağdaki içerik ---------- */
 .panel[hidden]{display:none}
 h2{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;
@@ -104,29 +100,35 @@ h3{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;
   font-size:1.05rem;letter-spacing:-.01em;margin:2.6rem 0 1rem;color:var(--ink-soft);
 }
-p{max-width:62ch;margin:0 0 1.1rem}
+p{max-width:38rem;margin:0 0 1.1rem}
 .interests{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
 .interests li{
   background:var(--paper-2);border:1px solid transparent;border-radius:6px;
   padding:.3rem .8rem;font-size:.95rem;
 }
-.edu{margin:0;display:grid;grid-template-columns:8.5rem 1fr;gap:.7rem 1.4rem;max-width:52rem}
+.edu{margin:0;display:grid;grid-template-columns:8.5rem 1fr;gap:.7rem 1.4rem;max-width:38rem}
 .edu dt{color:var(--ink-soft);font-size:.9rem;font-variant-numeric:tabular-nums}
 .edu dd{margin:0}
 .edu dd b{font-weight:500}
 .edu dd span{display:block;color:var(--ink-soft);font-size:.93rem}
 .langs dt,.langs dd{font-size:.95rem}
 
-.project{margin-bottom:2.8rem;max-width:62ch}
+/* Personal: fun facts listesi */
+.facts{max-width:38rem;margin:0;padding-left:1.1rem}
+.facts li{margin-bottom:.8rem}
+.facts li:last-child{margin-bottom:0}
+.facts li::marker{color:var(--amber)}
+
+.project{margin-bottom:2.8rem;max-width:38rem}
 .project:last-child{margin-bottom:0}
 .project h4{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;font-size:1.25rem;
   letter-spacing:-.01em;margin:0 0 .15rem;
 }
 .meta{color:var(--ink-soft);font-size:.9rem;margin:0 0 .7rem}
-/* açılır kapanır kayıtlar (Research ve Projects) */
+
 .entry{border-top:1px solid var(--rule);padding:1.1rem 0}
-.entry:first-of-type{border-top:0;padding-top:.2rem}
+.entry:first-of-type{border-top:0;padding-top:1rem}
 .entry summary{list-style:none;cursor:pointer;display:flex;gap:.7rem;align-items:flex-start}
 .entry summary::-webkit-details-marker{display:none}
 .entry summary::before{
@@ -153,11 +155,10 @@ p{max-width:62ch;margin:0 0 1.1rem}
 }
 .metric span{color:var(--ink-soft);font-size:.93rem}
 
-/* oyunu yeni sekmede açan kart (metric kutusuyla aynı aile) */
 .launch{
   display:flex;align-items:center;justify-content:space-between;gap:1.2rem;
   background:var(--paper-2);border-radius:10px;
-  padding:1.1rem 1.3rem;margin:.2rem 0 1.4rem;max-width:62ch;
+  padding:1.1rem 1.3rem;margin:.2rem 0 1.4rem;max-width:38rem;
   background-image:none;padding-bottom:1.1rem;
 }
 .launch{transition:background-color .15s}
@@ -171,8 +172,7 @@ p{max-width:62ch;margin:0 0 1.1rem}
   background:var(--paper);color:var(--ink);font-size:1.15rem;line-height:1;
 }
 
-
-.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin:2.4rem 0 .5rem;text-align:center;max-width:62ch}
+.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin:2.4rem 0 .5rem;text-align:center;max-width:38rem}
 .cats figure{margin:0;width:7.5rem;text-align:center}
 .cats img{width:100%;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block;border:1px solid var(--rule);font-size:0}
 .cats img[alt="Oreo"]{object-position:35% 25%}
@@ -209,7 +209,6 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
 
 <div class="page">
 
-  <!-- ---------- sol kart ---------- -->
   <aside class="card">
     <img class="portrait" src="portrait.jpg" alt="Özgün Ezgi Sevgili">
     <h1>Özgün Ezgi Sevgili</h1>
@@ -234,12 +233,10 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
     </ul>
   </aside>
 
-  <!-- ---------- sağ içerik ---------- -->
   <main>
 
     <section class="panel" id="about">
       <h2>About me</h2>
-      <!-- Kendi cümlelerinle değiştir. -->
       <p>Hi! I'm a Master's student in Management and Technology at the Technical University of Munich, specializing in Computer Engineering (major) and Economics &amp; Econometrics. I have a B.S. in Industrial Engineering from METU, with coursework spanning operations research and mathematical optimization.</p>
 
       <p>Before moving to Munich, I worked as a business analyst in the product management team on pricing and transfer optimization products. I also spent some time in research during my undergraduate years. I want to keep working on problems that are uncertain enough to be interesting and real enough that someone has to act on the answer.</p>
@@ -251,7 +248,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <dt>2026 — 2028</dt>
         <dd>
           <b>M.Sc. Management and Technology</b>
-          <span><a href="https://www.tum.de/en/">Technical University of Munich</a>, Computer Engineering (major) & Economics and Econometrics</span>
+          <span><a href="https://www.tum.de/en/">Technical University of Munich</a>, Computer Engineering (major) &amp; Economics and Econometrics</span>
         </dd>
 
         <dt>2019 — 2025</dt>
@@ -263,7 +260,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <dt>2015 — 2019</dt>
         <dd>
           <b>High School Diploma</b>
-          <span><a href="https://www.tedeskisehir.k12.tr/">TED Eskişehir College</a>, Full tuition merit scholarship</span>
+          <span><a href="https://www.tedeskisehir.k12.tr/">TED Eskişehir College</a></span>
         </dd>
       </dl>
 
@@ -273,6 +270,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <dt>English</dt><dd>Advanced, IELTS 8.0</dd>
         <dt>Korean</dt><dd>Advanced, TOPIK II Level 5</dd>
         <dt>German</dt><dd>Beginner, currently <span class="nowrap">working on it :)</span></dd>
+      </dl>
     </section>
 
     <section class="panel" id="research" hidden>
@@ -290,31 +288,32 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
       </ul>
 
       <h3>Work</h3>
- 
+
       <details class="entry">
         <summary>
           <div>
             <span class="e-title">Active learning in large scale vector optimization problems</span>
-            <p class="meta"><a href="https://w3.bilkent.edu.tr/bilkent/">Bilkent University</a>, 2023–24. Supervised by Assoc. Prof. Cem Tekin.</p>
+            <p class="meta"><a href="https://w3.bilkent.edu.tr/bilkent/">Bilkent University</a>, 2023–2024. Supervised by Assoc. Prof. Cem Tekin.</p>
           </div>
         </summary>
         <div class="e-body">
           <p>Joint Entropy Search is a Bayesian optimization method for expensive black-box functions, but it assumes the usual componentwise comparison of objectives. We extended it to vector optimization, which generalizes multi-objective optimization through orderings induced by convex cones, so the set of optimal points grows or shrinks with the cone angle.</p>
-          <p>Two pieces had to be rebuilt. Box decomposition, which JES uses to compute the cumulative distribution, does not survive the switch to cones, so I worked on a replacement using confidence ellipsoids, bounding boxes and a matrix representation of the cone. NSGA-II, used inside the method to find the Pareto set, needed its dominance comparisons redefined before it would return cone-based Pareto points.</p>
-          <p class="meta">This work was funded by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) under the 2247-C Intern Researcher Scholarship Program.</p>
+          <p>Two pieces had to be rebuilt. Box decomposition, which JES uses to compute the cumulative distribution, does not survive the switch to cones, so I worked on a replacement using confidence ellipsoids, bounding boxes, and a matrix representation of the cone. NSGA-II, used inside the method to find the Pareto set, needed its dominance comparisons redefined before it would return cone-based Pareto points.</p>
+          <p>This work was funded by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) under the 2247-C Intern Researcher Scholarship Program.</p>
         </div>
       </details>
- 
+
       <details class="entry">
         <summary>
           <div>
             <span class="e-title">Probabilistic analysis of random networks</span>
-            <p class="meta"><a href="https://www.rug.nl/">University of Groningen</a>, <a href="https://www.rug.nl/research/bernoulli/">Bernoulli Institute</a>, summer 2024. Supervised by Assist. Prof. Gilles Bonnet.</p>
+            <p class="meta"><a href="https://www.rug.nl/">University of Groningen</a>, <a href="https://www.rug.nl/research/bernoulli/">Bernoulli Institute</a>, Summer 2024. Supervised by Assist. Prof. Gilles Bonnet.</p>
           </div>
         </summary>
         <div class="e-body">
-          <p>Nanowire networks conduct electricity through wires thrown down at random, which makes their electrical behavior hard to predict. I modelled the network as a random graph: wire centers uniform on the unit square, orientations uniform, junctions as vertices. Working on the torus, I derived the intersection probability of two wires analytically and checked it against Monte Carlo simulation, which gives the expected number of junctions for a given wire count and length.</p>
+          <p>Nanowire networks conduct electricity through wires thrown down at random, which makes their electrical behavior hard to predict. I modeled the network as a random graph: wire centers uniform on the unit square, orientations uniform, junctions as vertices. Working on the torus, I derived the intersection probability of two wires analytically and checked it against Monte Carlo simulation, which gives the expected number of junctions for a given wire count and length.</p>
           <p>From there the question becomes a resistance distance problem, which is where the operations research side comes in. Resistance distance is a graph-theoretic quantity that also turns up in flow and network problems, and I computed it from the graph Laplacian, using the equivalence between resistance and the commute times of random walks to reason about the network without simulating every path. The literature review ran from percolation theory to optimal transport, which turns out to connect back to effective resistance on graphs.</p>
+          <p>This research was carried out through the Erasmus+ traineeship mobility program.</p>
         </div>
       </details>
     </section>
@@ -325,8 +324,8 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
       <details class="entry">
         <summary>
           <div>
-            <span class="e-title">Computing, learning and playing equilibria in small games</span>
-            <p class="meta">Worked notebooks and a browser game built on them, 2026.</p>
+            <span class="e-title">Computing, learning, and playing equilibria in games</span>
+            <p class="meta">A browser game about Nash equilibrium, 2026.</p>
           </div>
         </summary>
         <div class="e-body">
@@ -334,24 +333,24 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
             <span><b>Equilibrium puzzles</b><span>Open the game in a new tab</span></span>
             <span class="arr" aria-hidden="true">↗</span>
           </a>
-          <p>A Nash equilibrium is an outcome in which no player can do better by changing only their own move. The game is built around finding one. Its first part takes small games from the literature, from the Prisoner's Dilemma and Matching Pennies to penalty kicks and Bach or Stravinsky, and asks for the cell, or the mix of moves, that nobody wants to leave. Every puzzle can also be handed to two learning algorithms, to see whether they reach the same answer just by playing.</p>
+          <p>A Nash equilibrium is an outcome in which no player can do better by changing only their own move. The game is built around finding one. Its first part takes small games from the literature, from the Prisoner's Dilemma and Matching Pennies to penalty kicks and Bach or Stravinsky, and asks you to find the cell, or the mix of moves. Every puzzle can also be handed to two learning algorithms, to see whether they reach the same answer just by playing.</p>
           <p>The second part turns those algorithms into characters. Eight opponents play Rock-Paper-Scissors by hidden rules, and the task is to beat each one and then name its rule. The same characters meet again in an Axelrod-style tournament, and in an evolution mode where strategies that earn more than the average spread through a population, which shows when cooperation survives and when it collapses.</p>
-          <p>Behind the game are <a href="https://github.com/ozgunezgi/equilibrium-puzzles" target="_blank" rel="noopener">notebooks</a> that build each piece step by step and test it against an independent implementation: linear programming for zero-sum games, support enumeration for general games, and three learning rules, fictitious play, regret matching and Q-learning.</p>
+          <p>Behind the game are <a href="https://github.com/ozgunezgi/equilibrium-puzzles" target="_blank" rel="noopener">notebooks</a> that build each piece step by step and test it against an independent implementation: linear programming for zero-sum games, support enumeration for general games, and three learning rules, fictitious play, regret matching, and Q-learning.</p>
         </div>
       </details>
- 
+
       <details class="entry">
         <summary>
           <div>
             <span class="e-title">Dynamic planning of shared scooter field operations</span>
-            <p class="meta">Senior system design project, METU Industrial Engineering, 2024–25. Six-person team, in partnership with Hop Teknoloji.</p>
+            <p class="meta">Senior System Design Project, METU Industrial Engineering, 2024–2025. Six-person team, in partnership with Hop Teknoloji.</p>
           </div>
         </summary>
         <div class="e-body">
-          <p>A 2,000-scooter fleet needs battery swaps and repositioning every shift, and the field teams were deciding what to do next by eye: which scooter, in what order, on which route. We built a decision support system that selects the tasks worth doing in a shift and sequences them, replacing manual routing with an optimization-based approach that the operator could run each morning.</p>
+          <p>A 2,000-scooter fleet needs battery swaps and repositioning every shift, and the field teams were deciding what to do next by eye: which scooter, in what order, on which route. We built a decision support system that selects the tasks worth doing in a shift and sequences them, replacing manual routing with an optimization-based approach.</p>
           <p class="metric">
             <b>+70.4%</b>
-            <span>field productivity in tasks per kilometer driven, and 40% fewer scooters left stranded at critical battery levels.</span>
+            <span>field productivity in tasks per kilometer driven, and 40% fewer critical battery tasks left unhandled.</span>
           </p>
           <p>The system works in three stages and replans as the shift goes. Stations close enough to walk between are grouped with DBSCAN and scored on how full they are, and the ones that need attention become a route through a traveling salesman problem (TSP). Each scooter is then assigned to its nearest station, which turns the map into work clusters. Inside the current cluster, a mixed-integer linear program (MILP) decides which scooters are worth visiting and in what order, trading travel distance against a penalty for leaving a task undone. It solves in a couple of seconds, so the plan is recomputed every time a station is finished, with whatever the map looks like at that moment.</p>
           <p class="meta"><a href="poster.pdf">Poster (in Turkish)</a></p>
@@ -362,27 +361,25 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
 
     <section class="panel" id="personal" hidden>
       <h2>Personal</h2>
-      
-      <h3>Some fun facts about me:</h3>
-      <p>I grew up in a small town in Türkiye. In high school I started commuting to Eskişehir every day, and somehow those long drives became one of my favourite parts of that time. I still love a good road trip.</p>
 
-      <p>Both sides of my family go back generations to Bulgaria, and my grandfather was born there. I grew up surrounded by that Balkan culture, and it still shows in the small, warm rituals I never want to lose, like putting on a martenitsa every March.</p>
+      <p>I grew up in a small town in Türkiye. In high school I started commuting to Eskişehir every day, and somehow those long drives became one of my favorite parts of that time. I still love a good road trip.</p>
 
-      <p>The pandemic hit partway through my first year of university, so much of the first couple of years happened in front of a screen at home instead of classrooms.</p>
+      <p>Traveling is the first thing I reach for with free time. My last trip was to Japan, where Kyoto climbed high up my list of favorite cities. Learning languages has become one of my favorite hobbies for much the same reason, and I am very excited about learning German these days.</p>
 
-      <p>I deeply care about human rights, animal rights and gender equality, and about keeping myself and the people around me educated on all three.</p>
+      <p>I also love any kind of arts and crafts: painting, drawing, crochet, ceramics, anything that ends with something real I can hold, use, or gift to someone I love.</p>
 
-      <p>I taught myself Korean, almost to a high level, starting purely from watching K&#8209;dramas, which still makes me laugh a little. Learning languages has become one of my favourite hobbies. I am very excited about learning German these days.</p>
+      <p>I deeply care about human rights, animal rights, and gender equality, and about keeping myself and the people around me educated on all three.</p>
 
-      <p>Travelling is the first thing I reach for with free time. My last trip was to Japan, and Kyoto climbed high up my list of favourite cities.</p>
+      <h3>Some fun facts about me</h3>
+      <ul class="facts">
+        <li>Both sides of my family go back generations to Bulgaria. I grew up surrounded by that Balkan culture, and it still shows in the small, warm rituals I never want to lose, like putting on a martenitsa every March.</li>
+        <li>I taught myself Korean, almost to a high level, starting purely from watching K&#8209;dramas, which still makes me laugh a little.</li>
+        <li>The pandemic hit partway through my first year of university, so much of the first couple of years happened in front of a screen at home instead of classrooms.</li>
+        <li>I like trying things I'm not good at. I did taekwondo for a year and a half at university and graduated just before earning my blue-green belt, and I've given bouldering a go, mostly for the pleasure of being bad at something new.</li>
+      </ul>
 
-      <p>I love any kind of arts and crafts: painting, drawing, crochet, ceramics, anything that ends with something real I can hold, use, or gift to someone I love.</p>
+      <p style="margin-top:1.6rem">Three cats live with us at my hometown, the oldest just turned 10. They all have their own story and I feel so lucky to have them around.</p>
 
-      <p>I also like trying things I'm not good at. I did taekwondo for a year and a half at university and graduated just before earning my blue-green belt, and I've given bouldering a go, mostly for the pleasure of being bad at something new.</p>
-
-      <p>Three cats live with us at my hometown, the oldest just turned 10. They all have their own story and I feel lucky to have them around.</p>
-
-      <!-- Fotoğrafları oreo.jpg, pati.jpg, kucuk.jpg adlarıyla index.html ile aynı klasöre koy. -->
       <div class="cats">
         <figure>
           <img src="oreo.png" alt="Oreo">
