@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Özgün Ezgi Sevgili</title>
-<meta name="description" content="M.Sc. Management and Technology at the Technical University of Munich.">
+<meta name="description" content="Industrial engineer. M.Sc. Management and Technology at the Technical University of Munich.">
 <meta name="robots" content="noindex, nofollow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,7 @@ h3{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;
   font-size:1.05rem;letter-spacing:-.01em;margin:2.6rem 0 1rem;color:var(--ink-soft);
 }
-p{max-width:68ch;margin:0 0 1.1rem}
+p{max-width:62ch;margin:0 0 1.1rem}
 .interests{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
 .interests li{
   background:var(--paper-2);border:1px solid transparent;border-radius:6px;
@@ -125,11 +125,7 @@ p{max-width:68ch;margin:0 0 1.1rem}
 }
 .meta{color:var(--ink-soft);font-size:.9rem;margin:0 0 .7rem}
 /* açılır kapanır kayıtlar (Research ve Projects) */
-.entry{
-  border-top:1px solid var(--rule);
-  padding:1.1rem 0;
-  margin-bottom:1.5rem;
-}
+.entry{border-top:1px solid var(--rule);padding:1.1rem 0}
 .entry:first-of-type{border-top:0;padding-top:.2rem}
 .entry summary{list-style:none;cursor:pointer;display:flex;gap:.7rem;align-items:flex-start}
 .entry summary::-webkit-details-marker{display:none}
@@ -167,7 +163,7 @@ p{max-width:68ch;margin:0 0 1.1rem}
 .launch{transition:background-color .15s}
 .launch:hover{background-size:auto;background-color:#E8E8E5}
 .launch .arr{transition:background-color .15s, color .15s}
-.launch:hover .arr{background:var(--ink);color:#fff}
+
 .launch b{display:block;color:var(--ink);font-weight:600;font-size:1.25rem;letter-spacing:-.015em;line-height:1.2}
 .launch span{display:block;color:var(--ink-soft);font-size:.9rem}
 .launch .arr{
@@ -244,11 +240,11 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
     <section class="panel" id="about">
       <h2>About me</h2>
       <!-- Kendi cümlelerinle değiştir. -->
-      <p>Hi! I'm a Master's student in Management and Technology (MMT) at the Technical University of Munich, specializing in Computer Engineering (major) and Economics &amp; Econometrics. I have a B.S. in Industrial Engineering from METU, with coursework spanning operations research and mathematical optimization.</p>
+      <p>Hi! I'm a Master's student in Management and Technology at the Technical University of Munich, specializing in Computer Engineering (major) and Economics &amp; Econometrics. I have a B.S. in Industrial Engineering from METU, with coursework spanning operations research and mathematical optimization.</p>
 
       <p>Before moving to Munich, I worked as a business analyst in the product management team on pricing and transfer optimization products. I also spent some time in research during my undergraduate years. I want to keep working on problems that are uncertain enough to be interesting and real enough that someone has to act on the answer.</p>
 
-      <p>My goal is to create meaningful change and improve the lives of others. I want to use my work to make the world a little better than I found it.</p>
+      <p>My life goal is to create meaningful change and improve the lives of others. I’d be happy if my work could play even a small part in making the world a little better than I found it.</p>
 
       <h3>Education</h3>
       <dl class="edu">
@@ -261,13 +257,13 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <dt>2019 — 2025</dt>
         <dd>
           <b>B.S. Industrial Engineering</b>
-          <span><a href="https://www.metu.edu.tr/">Middle East Technical University</a>, GPA 3.45/4.00, Honors</span>
+          <span><a href="https://www.metu.edu.tr/">Middle East Technical University</a>, Honors</span>
         </dd>
 
         <dt>2015 — 2019</dt>
         <dd>
           <b>High School Diploma</b>
-          <span><a href="https://www.tedeskisehir.k12.tr/">TED Eskişehir College</a>, Graduation score 98.23/100, Full tuition merit scholarship</span>
+          <span><a href="https://www.tedeskisehir.k12.tr/">TED Eskişehir College</a>, Full tuition merit scholarship</span>
         </dd>
       </dl>
 
@@ -299,13 +295,13 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <summary>
           <div>
             <span class="e-title">Active learning in large scale vector optimization problems</span>
-            <p class="meta"><a href="https://w3.bilkent.edu.tr/bilkent/">Bilkent University</a>, 2023–2024. Supervised by Assoc. Prof. Cem Tekin.</p>
+            <p class="meta"><a href="https://w3.bilkent.edu.tr/bilkent/">Bilkent University</a>, 2023–24. Supervised by Assoc. Prof. Cem Tekin.</p>
           </div>
         </summary>
         <div class="e-body">
           <p>Joint Entropy Search is a Bayesian optimization method for expensive black-box functions, but it assumes the usual componentwise comparison of objectives. We extended it to vector optimization, which generalizes multi-objective optimization through orderings induced by convex cones, so the set of optimal points grows or shrinks with the cone angle.</p>
           <p>Two pieces had to be rebuilt. Box decomposition, which JES uses to compute the cumulative distribution, does not survive the switch to cones, so I worked on a replacement using confidence ellipsoids, bounding boxes and a matrix representation of the cone. NSGA-II, used inside the method to find the Pareto set, needed its dominance comparisons redefined before it would return cone-based Pareto points.</p>
-          <p>This work was funded by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) under the 2247-C Intern Researcher Scholarship Program.</p>
+          <p class="meta">This work was funded by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) under the 2247-C Intern Researcher Scholarship Program.</p>
         </div>
       </details>
  
@@ -313,7 +309,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <summary>
           <div>
             <span class="e-title">Probabilistic analysis of random networks</span>
-            <p class="meta"><a href="https://www.rug.nl/">University of Groningen</a>, <a href="https://www.rug.nl/research/bernoulli/">Bernoulli Institute</a>, Summer 2024. Supervised by Assist. Prof. Gilles Bonnet.</p>
+            <p class="meta"><a href="https://www.rug.nl/">University of Groningen</a>, <a href="https://www.rug.nl/research/bernoulli/">Bernoulli Institute</a>, summer 2024. Supervised by Assist. Prof. Gilles Bonnet.</p>
           </div>
         </summary>
         <div class="e-body">
@@ -326,19 +322,19 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
     <section class="panel" id="projects" hidden>
       <h2>Projects</h2>
 
-      <details class="entry" open>
+      <details class="entry">
         <summary>
           <div>
-            <span class="e-title">Computing, learning and playing equilibria in games</span>
-            <p class="meta">A browser game about Nash equilibrium, 2026.</p>
+            <span class="e-title">Computing, learning and playing equilibria in small games</span>
+            <p class="meta">Worked notebooks and a browser game built on them, 2026.</p>
           </div>
         </summary>
         <div class="e-body">
-          <a class="launch" href="https://ozgunezgi.github.io/equilibrium-puzzles/" target="_blank" rel="noopener">
+          <a class="launch" href="https://ozgunezgi.github.io/equilibrium-puzzles/game.html" target="_blank" rel="noopener">
             <span><b>Equilibrium puzzles</b><span>Open the game in a new tab</span></span>
             <span class="arr" aria-hidden="true">↗</span>
           </a>
-          <p>A Nash equilibrium is an outcome in which no player can do better by changing only their own move. The game is built around finding one. Its first part takes small games from the literature, from the Prisoner's Dilemma and Matching Pennies to penalty kicks and the Battle of the Sexes, and asks for the cell, or the mix of moves, that nobody wants to leave. Every puzzle can also be handed to two learning algorithms, to see whether they reach the same answer just by playing.</p>
+          <p>A Nash equilibrium is an outcome in which no player can do better by changing only their own move. The game is built around finding one. Its first part takes small games from the literature, from the Prisoner's Dilemma and Matching Pennies to penalty kicks and Bach or Stravinsky, and asks for the cell, or the mix of moves, that nobody wants to leave. Every puzzle can also be handed to two learning algorithms, to see whether they reach the same answer just by playing.</p>
           <p>The second part turns those algorithms into characters. Eight opponents play Rock-Paper-Scissors by hidden rules, and the task is to beat each one and then name its rule. The same characters meet again in an Axelrod-style tournament, and in an evolution mode where strategies that earn more than the average spread through a population, which shows when cooperation survives and when it collapses.</p>
           <p>Behind the game are <a href="https://github.com/ozgunezgi/equilibrium-puzzles" target="_blank" rel="noopener">notebooks</a> that build each piece step by step and test it against an independent implementation: linear programming for zero-sum games, support enumeration for general games, and three learning rules, fictitious play, regret matching and Q-learning.</p>
         </div>
@@ -348,7 +344,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
         <summary>
           <div>
             <span class="e-title">Dynamic planning of shared scooter field operations</span>
-            <p class="meta">Senior system design project, METU Industrial Engineering, 2024–2025. Six-person team, in partnership with Hop Teknoloji.</p>
+            <p class="meta">Senior system design project, METU Industrial Engineering, 2024–25. Six-person team, in partnership with Hop Teknoloji.</p>
           </div>
         </summary>
         <div class="e-body">
