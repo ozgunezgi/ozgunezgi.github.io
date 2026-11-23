@@ -14,11 +14,11 @@
 <style>
 :root{
   --paper:#FFFFFF;
-  --paper-2:#F1F1EF;
-  --ink:#13293D;
-  --ink-soft:#4A6076;
-  --rule:#E3E3E0;
-  --amber:#E09400;
+  --paper-2:#EEF3F8;
+  --ink:#12293E;
+  --ink-soft:#636E77;
+  --rule:#DFE6ED;
+  --accent:#2B5FA8;
 }
 
 *{box-sizing:border-box}
@@ -29,28 +29,42 @@ html{
 body{
   margin:0;
   background-color:var(--paper);
-  background-image:
-    linear-gradient(to right, rgba(0,0,0,.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,.035) 1px, transparent 1px);
-  background-size:28px 28px;
   color:var(--ink);
   font-family:"IBM Plex Sans",system-ui,sans-serif;
-  font-size:17px;line-height:1.62;
+  font-size:17.5px;line-height:1.68;
+  -webkit-font-smoothing:antialiased;
 }
-a{color:inherit;text-decoration:none;
-  background-image:linear-gradient(var(--amber),var(--amber));
-  background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;padding-bottom:1px}
-a:hover{background-size:100% 100%}
-a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+.panel > p a.quiet{
+  color:inherit;
+  text-decoration:underline;
+  text-decoration-color:#B8C8D8;
+  text-decoration-thickness:1px;
+  text-underline-offset:3px;
+  transition:text-decoration-color .15s ease;
+}
+.panel > p a.quiet:hover{text-decoration-color:var(--accent)}
+
+.meta a,.edu dd span a{
+  color:var(--accent);
+  font-weight:500;
+  text-decoration:none;
+}
+.meta a:hover,.edu dd span a:hover{
+  text-decoration:underline;text-underline-offset:3px;
+}
 
 .topbar{
   position:sticky;top:0;z-index:10;
-  background:rgba(255,255,255,.92);
+  background:rgba(255,255,255,.93);
   backdrop-filter:blur(6px);
   border-bottom:1px solid var(--rule);
 }
 .topbar .inner{
-  max-width:70rem;margin:0 auto;padding:.7rem 1.5rem;
+  max-width:64rem;margin:0 auto;padding:.7rem 1.5rem;
   display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;align-items:center;
 }
 .tab{
@@ -58,20 +72,19 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
   background:none;border:0;padding:.35rem 0;margin:0;cursor:pointer;color:var(--ink-soft);
   border-bottom:2px solid transparent;
 }
-.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--amber)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
 .tab:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .topbar a{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;font-size:1rem;
   color:var(--ink-soft);
-  background-image:none;
   padding:.35rem 0;
   border-bottom:2px solid transparent;
 }
-.topbar a:hover{color:var(--ink);border-bottom-color:var(--rule)}
+.topbar a:hover{color:var(--ink);border-bottom-color:var(--rule);text-decoration:none}
 
 .page{
-  max-width:70rem;margin:0 auto;padding:2.6rem 1.5rem 5rem;
-  display:grid;grid-template-columns:16rem 1fr;gap:3.5rem;align-items:start;
+  max-width:64rem;margin:0 auto;padding:2.8rem 1.5rem 5.5rem;
+  display:grid;grid-template-columns:16.5rem 1fr;gap:3rem;align-items:start;
 }
 
 .card{position:sticky;top:5.2rem}
@@ -80,15 +93,15 @@ a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2p
   border:1px solid var(--rule);margin-bottom:1.4rem;
 }
 .card h1{
-
   font-family:"IBM Plex Sans",system-ui,sans-serif;
   font-weight:600;font-size:1.7rem;line-height:1.15;letter-spacing:-.015em;
   margin:0 0 .5rem;
 }
 .card .title{margin:0 0 1.4rem;font-size:.95rem;line-height:1.45}
+.card .title span{display:block}
 .card ul{list-style:none;margin:0;padding:0;font-size:.95rem}
 .card li{margin-bottom:.6rem;display:flex;align-items:center;gap:.6rem}
-.ico{width:16px;height:16px;flex:0 0 16px;color:var(--ink)}
+.ico{width:16px;height:16px;flex:0 0 16px;color:var(--ink-soft)}
 
 .panel[hidden]{display:none}
 h2{
@@ -100,31 +113,19 @@ h3{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;
   font-size:1.05rem;letter-spacing:-.01em;margin:2.6rem 0 1rem;color:var(--ink-soft);
 }
-p{max-width:38rem;margin:0 0 1.1rem}
+p{max-width:36rem;margin:0 0 1.1rem}
 .interests{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
 .interests li{
   background:var(--paper-2);border:1px solid transparent;border-radius:6px;
   padding:.3rem .8rem;font-size:.95rem;
 }
-.edu{margin:0;display:grid;grid-template-columns:8.5rem 1fr;gap:.7rem 1.4rem;max-width:38rem}
+.edu{margin:0;display:grid;grid-template-columns:8.5rem 1fr;gap:.7rem 1.4rem;max-width:36rem}
 .edu dt{color:var(--ink-soft);font-size:.9rem;font-variant-numeric:tabular-nums}
 .edu dd{margin:0}
 .edu dd b{font-weight:500}
 .edu dd span{display:block;color:var(--ink-soft);font-size:.93rem}
 .langs dt,.langs dd{font-size:.95rem}
 
-/* Personal: fun facts listesi */
-.facts{max-width:38rem;margin:0;padding-left:1.1rem}
-.facts li{margin-bottom:.8rem}
-.facts li:last-child{margin-bottom:0}
-.facts li::marker{color:var(--amber)}
-
-.project{margin-bottom:2.8rem;max-width:38rem}
-.project:last-child{margin-bottom:0}
-.project h4{
-  font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;font-size:1.25rem;
-  letter-spacing:-.01em;margin:0 0 .15rem;
-}
 .meta{color:var(--ink-soft);font-size:.9rem;margin:0 0 .7rem}
 
 .entry{border-top:1px solid var(--rule);padding:1.1rem 0}
@@ -133,7 +134,7 @@ p{max-width:38rem;margin:0 0 1.1rem}
 .entry summary::-webkit-details-marker{display:none}
 .entry summary::before{
   content:"";width:.45rem;height:.45rem;flex:0 0 auto;margin-top:.55rem;
-  border-right:1.5px solid var(--ink-soft);border-bottom:1.5px solid var(--ink-soft);
+  border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);
   transform:rotate(-45deg);transition:transform .15s;
 }
 .entry[open] summary::before{transform:rotate(45deg)}
@@ -147,7 +148,7 @@ p{max-width:38rem;margin:0 0 1.1rem}
 
 .metric{
   display:block;background:var(--paper-2);border:0;border-radius:10px;
-  padding:1.2rem 1.4rem;margin:1.2rem 0 1.8rem;max-width:34rem;
+  padding:1.2rem 1.4rem;margin:1.2rem 0 1.8rem;max-width:32rem;
 }
 .metric b{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:2.3rem;font-weight:600;
@@ -158,28 +159,25 @@ p{max-width:38rem;margin:0 0 1.1rem}
 .launch{
   display:flex;align-items:center;justify-content:space-between;gap:1.2rem;
   background:var(--paper-2);border-radius:10px;
-  padding:1.1rem 1.3rem;margin:.2rem 0 1.4rem;max-width:38rem;
-  background-image:none;padding-bottom:1.1rem;
+  padding:1.1rem 1.3rem;margin:.2rem 0 1.4rem;max-width:36rem;
+  transition:background-color .15s;
 }
-.launch{transition:background-color .15s}
-.launch:hover{background-size:auto;background-color:#E8E8E5}
-.launch .arr{transition:background-color .15s, color .15s}
+.launch:hover{background-color:#E3EBF4}
 
-.launch b{display:block;color:var(--ink);font-weight:600;font-size:1.25rem;letter-spacing:-.015em;line-height:1.2}
+.launch b{display:block;color:var(--accent);font-weight:600;font-size:1.25rem;letter-spacing:-.015em;line-height:1.2}
 .launch span{display:block;color:var(--ink-soft);font-size:.9rem}
 .launch .arr{
   display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;flex:0 0 auto;
   background:var(--paper);color:var(--ink);font-size:1.15rem;line-height:1;
 }
 
-.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin:2.4rem 0 .5rem;text-align:center;max-width:38rem}
+.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin:2.4rem 0 .5rem;text-align:center;max-width:36rem}
 .cats figure{margin:0;width:7.5rem;text-align:center}
 .cats img{width:100%;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block;border:1px solid var(--rule);font-size:0}
 .cats img[alt="Oreo"]{object-position:35% 25%}
 .cats img[alt="Pati"]{object-position:center 20%}
 .cats img[alt="Küçük"]{object-position:55% 30%}
 .cats figcaption{margin-top:.6rem;font-size:.93rem;color:var(--ink-soft)}
-.smiley{font-size:.85em;color:var(--ink-soft)}
 .edu dd .nowrap{display:inline;white-space:nowrap;color:inherit;font-size:inherit}
 
 footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
@@ -212,7 +210,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
   <aside class="card">
     <img class="portrait" src="portrait.jpg" alt="Özgün Ezgi Sevgili">
     <h1>Özgün Ezgi Sevgili</h1>
-    <p class="title">M.Sc. Management and Technology, Technical University of Munich</p>
+    <p class="title">M.Sc. Management and Technology<span>Technical University of Munich</span></p>
     <ul>
       <li>
         <svg class="ico" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0a5 5 0 0 0-5 5c0 4 5 11 5 11s5-7 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
@@ -237,7 +235,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
 
     <section class="panel" id="about">
       <h2>About me</h2>
-      <p>Hi! I'm a Master's student in Management and Technology at the Technical University of Munich, specializing in Computer Engineering and Operations. I have a Bachelor of Science in Industrial Engineering from Middle East Technical University, with coursework spanning operations research and mathematical optimization.</p>
+      <p>Hi! I'm a Master's student in Management and Technology at the <a class="quiet" href="https://www.tum.de/en/">Technical University of Munich</a>, specializing in Computer Engineering and Operations. I have a Bachelor of Science in Industrial Engineering from <a class="quiet" href="https://www.metu.edu.tr/">Middle East Technical University</a>, with coursework spanning operations research and mathematical optimization.</p>
 
       <p>Before moving to Munich, I worked as a business analyst in the product management team on pricing and transfer optimization products. I also spent some time in research during my undergraduate years. I want to keep working on problems that are uncertain enough to be interesting and real enough that someone has to act on the answer.</p>
 
@@ -251,17 +249,12 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
           <span><a href="https://www.tum.de/en/">Technical University of Munich</a>, Computer Engineering (major) &amp; Operations and Supply Chain Management</span>
         </dd>
 
-        <dt>2019 — 2025</dt>
+        <dt>2021 — 2025</dt>
         <dd>
           <b>B.Sc. Industrial Engineering</b>
           <span><a href="https://www.metu.edu.tr/">Middle East Technical University</a>, Honors</span>
         </dd>
 
-        <dt>2015 — 2019</dt>
-        <dd>
-          <b>High School Diploma</b>
-          <span><a href="https://www.tedeskisehir.k12.tr/">TED Eskişehir College</a></span>
-        </dd>
       </dl>
 
       <h3>Languages</h3>
@@ -365,21 +358,13 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
 
       <p>I grew up in a small town in Türkiye. In high school I started commuting to Eskişehir every day, and somehow those long drives became one of my favorite parts of that time. I still love a good road trip.</p>
 
-      <p>Traveling is the first thing I reach for with free time. My last trip was to Japan, where Kyoto climbed high up my list of favorite cities. Learning languages has become one of my favorite hobbies for much the same reason, and I am very excited about learning German these days.</p>
+      <p>Both sides of my family go back generations to Bulgaria. I grew up surrounded by that Balkan culture, and it still shows in the small, warm rituals I never want to lose, like putting on a martenitsa every March.</p>
 
-      <p>I also love any kind of arts and crafts: painting, drawing, crochet, ceramics, anything that ends with something real I can hold, use, or gift to someone I love.</p>
+      <p>Other cultures have pulled me in for as long as I can remember, and languages were the first way I could reach them. I taught myself Korean, almost to a high level, starting purely from watching K‑dramas, which I still think is a little funny. I am very excited about learning German these days. Traveling came later and is now the first thing I reach for with free time. My last trip was to Japan, where Kyoto climbed high up my list of favorite cities.</p>
 
-      <p>I deeply care about human rights, animal rights, and gender equality, and about keeping myself and the people around me educated on all three.</p>
+      <p>I like doing things I'm bad at, which at the start is everything. I did taekwondo for a year and a half at university and graduated right before I could test for the blue-green belt. I also love any kind of arts and crafts: painting, drawing, crochet, ceramics, anything that ends with something real I can hold, use, or gift to someone I love.</p>
 
-      <h3>Some fun facts about me</h3>
-      <ul class="facts">
-        <li>Both sides of my family go back generations to Bulgaria. I grew up surrounded by that Balkan culture, and it still shows in the small, warm rituals I never want to lose, like putting on a martenitsa every March.</li>
-        <li>I taught myself Korean, almost to a high level, starting purely from watching K&#8209;dramas, which still makes me laugh a little.</li>
-        <li>The pandemic hit partway through my first year of university, so much of the first couple of years happened in front of a screen at home instead of classrooms.</li>
-        <li>I like trying things I'm not good at. I did taekwondo for a year and a half at university and graduated just before earning my blue-green belt, and I've given bouldering a go, mostly for the pleasure of being bad at something new.</li>
-      </ul>
-
-      <p style="margin-top:1.6rem">Three cats live with us at my hometown, the oldest just turned 10. They all have their own story and I feel so lucky to have them around.</p>
+      <p>I deeply care about human rights, animal rights, and gender equality, and about keeping myself and the people around me educated on all three. Three cats live with us at my hometown. They all have their own story, and I feel so lucky to have them around.</p>
 
       <div class="cats">
         <figure>
