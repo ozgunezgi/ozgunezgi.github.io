@@ -14,11 +14,11 @@
 <style>
 :root{
   --paper:#FFFFFF;
-  --paper-2:#EEF3F8;
-  --ink:#12293E;
-  --ink-soft:#636E77;
-  --rule:#DFE6ED;
-  --accent:#2B5FA8;
+  --paper-2:#F1F1EF;
+  --ink:#13293D;
+  --ink-soft:#4A6076;
+  --rule:#E3E3E0;
+  --amber:#2B5FA8;
 }
 
 *{box-sizing:border-box}
@@ -29,42 +29,29 @@ html{
 body{
   margin:0;
   background-color:var(--paper);
+  background-image:
+    linear-gradient(to right, rgba(0,0,0,.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,.035) 1px, transparent 1px);
+  background-size:28px 28px;
   color:var(--ink);
   font-family:"IBM Plex Sans",system-ui,sans-serif;
-  font-size:17.5px;line-height:1.68;
-  -webkit-font-smoothing:antialiased;
+  font-size:17px;line-height:1.62;
 }
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline;text-underline-offset:3px}
-a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+a{color:inherit;text-decoration:none;
+  background-image:linear-gradient(var(--amber),var(--amber));
+  background-repeat:no-repeat;background-position:0 100%;background-size:100% 2px;padding-bottom:1px}
+a:hover{background-size:100% 100%;color:#FFFFFF}
+a:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px}
 
-.panel > p a.quiet{
-  color:inherit;
-  text-decoration:underline;
-  text-decoration-color:#B8C8D8;
-  text-decoration-thickness:1px;
-  text-underline-offset:3px;
-  transition:text-decoration-color .15s ease;
-}
-.panel > p a.quiet:hover{text-decoration-color:var(--accent)}
-
-.meta a,.edu dd span a{
-  color:var(--accent);
-  font-weight:500;
-  text-decoration:none;
-}
-.meta a:hover,.edu dd span a:hover{
-  text-decoration:underline;text-underline-offset:3px;
-}
 
 .topbar{
   position:sticky;top:0;z-index:10;
-  background:rgba(255,255,255,.93);
+  background:rgba(255,255,255,.92);
   backdrop-filter:blur(6px);
   border-bottom:1px solid var(--rule);
 }
 .topbar .inner{
-  max-width:64rem;margin:0 auto;padding:.7rem 1.5rem;
+  max-width:70rem;margin:0 auto;padding:.7rem 1.5rem;
   display:flex;flex-wrap:wrap;gap:.4rem 1.6rem;align-items:center;
 }
 .tab{
@@ -72,19 +59,20 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
   background:none;border:0;padding:.35rem 0;margin:0;cursor:pointer;color:var(--ink-soft);
   border-bottom:2px solid transparent;
 }
-.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--amber)}
 .tab:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .topbar a{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;font-size:1rem;
   color:var(--ink-soft);
+  background-image:none;
   padding:.35rem 0;
   border-bottom:2px solid transparent;
 }
-.topbar a:hover{color:var(--ink);border-bottom-color:var(--rule);text-decoration:none}
+.topbar a:hover{color:var(--ink);border-bottom-color:var(--rule)}
 
 .page{
-  max-width:64rem;margin:0 auto;padding:2.8rem 1.5rem 5.5rem;
-  display:grid;grid-template-columns:16.5rem 1fr;gap:3rem;align-items:start;
+  max-width:70rem;margin:0 auto;padding:2.6rem 1.5rem 5rem;
+  display:grid;grid-template-columns:16.5rem 1fr;gap:3.5rem;align-items:start;
 }
 
 .card{position:sticky;top:5.2rem}
@@ -101,7 +89,7 @@ a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius
 .card .title span{display:block}
 .card ul{list-style:none;margin:0;padding:0;font-size:.95rem}
 .card li{margin-bottom:.6rem;display:flex;align-items:center;gap:.6rem}
-.ico{width:16px;height:16px;flex:0 0 16px;color:var(--ink-soft)}
+.ico{width:16px;height:16px;flex:0 0 16px;color:var(--ink)}
 
 .panel[hidden]{display:none}
 h2{
@@ -113,13 +101,13 @@ h3{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-weight:600;
   font-size:1.05rem;letter-spacing:-.01em;margin:2.6rem 0 1rem;color:var(--ink-soft);
 }
-p{max-width:36rem;margin:0 0 1.1rem}
+p{max-width:38rem;margin:0 0 1.1rem}
 .interests{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem}
 .interests li{
   background:var(--paper-2);border:1px solid transparent;border-radius:6px;
   padding:.3rem .8rem;font-size:.95rem;
 }
-.edu{margin:0;display:grid;grid-template-columns:8.5rem 1fr;gap:.7rem 1.4rem;max-width:36rem}
+.edu{margin:0;display:grid;grid-template-columns:8.5rem 1fr;gap:.7rem 1.4rem;max-width:38rem}
 .edu dt{color:var(--ink-soft);font-size:.9rem;font-variant-numeric:tabular-nums}
 .edu dd{margin:0}
 .edu dd b{font-weight:500}
@@ -134,7 +122,7 @@ p{max-width:36rem;margin:0 0 1.1rem}
 .entry summary::-webkit-details-marker{display:none}
 .entry summary::before{
   content:"";width:.45rem;height:.45rem;flex:0 0 auto;margin-top:.55rem;
-  border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);
+  border-right:1.5px solid var(--ink-soft);border-bottom:1.5px solid var(--ink-soft);
   transform:rotate(-45deg);transition:transform .15s;
 }
 .entry[open] summary::before{transform:rotate(45deg)}
@@ -148,7 +136,7 @@ p{max-width:36rem;margin:0 0 1.1rem}
 
 .metric{
   display:block;background:var(--paper-2);border:0;border-radius:10px;
-  padding:1.2rem 1.4rem;margin:1.2rem 0 1.8rem;max-width:32rem;
+  padding:1.2rem 1.4rem;margin:1.2rem 0 1.8rem;max-width:34rem;
 }
 .metric b{
   font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:2.3rem;font-weight:600;
@@ -156,22 +144,7 @@ p{max-width:36rem;margin:0 0 1.1rem}
 }
 .metric span{color:var(--ink-soft);font-size:.93rem}
 
-.launch{
-  display:flex;align-items:center;justify-content:space-between;gap:1.2rem;
-  background:var(--paper-2);border-radius:10px;
-  padding:1.1rem 1.3rem;margin:.2rem 0 1.4rem;max-width:36rem;
-  transition:background-color .15s;
-}
-.launch:hover{background-color:#E3EBF4}
-
-.launch b{display:block;color:var(--accent);font-weight:600;font-size:1.25rem;letter-spacing:-.015em;line-height:1.2}
-.launch span{display:block;color:var(--ink-soft);font-size:.9rem}
-.launch .arr{
-  display:grid;place-items:center;width:2.4rem;height:2.4rem;border-radius:50%;flex:0 0 auto;
-  background:var(--paper);color:var(--ink);font-size:1.15rem;line-height:1;
-}
-
-.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin:2.4rem 0 .5rem;text-align:center;max-width:36rem}
+.cats{display:flex;justify-content:center;flex-wrap:wrap;gap:2rem;margin:2.4rem 0 .5rem;text-align:center;max-width:38rem}
 .cats figure{margin:0;width:7.5rem;text-align:center}
 .cats img{width:100%;aspect-ratio:1;border-radius:50%;object-fit:cover;display:block;border:1px solid var(--rule);font-size:0}
 .cats img[alt="Oreo"]{object-position:35% 25%}
@@ -199,7 +172,6 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
   <div class="inner">
     <button class="tab" role="tab" aria-selected="true" data-panel="about">About</button>
     <button class="tab" role="tab" aria-selected="false" data-panel="research">Research</button>
-    <button class="tab" role="tab" aria-selected="false" data-panel="projects">Projects</button>
     <button class="tab" role="tab" aria-selected="false" data-panel="personal">Personal</button>
     <a href="resume.pdf">Resume</a>
   </div>
@@ -235,7 +207,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
 
     <section class="panel" id="about">
       <h2>About me</h2>
-      <p>Hi! I'm a Master's student in Management and Technology at the <a class="quiet" href="https://www.tum.de/en/">Technical University of Munich</a>, specializing in Computer Engineering and Operations. I have a Bachelor of Science in Industrial Engineering from <a class="quiet" href="https://www.metu.edu.tr/">Middle East Technical University</a>, with coursework spanning operations research and mathematical optimization.</p>
+      <p>Hi! I'm a Master's student in Management and Technology at the <a href="https://www.tum.de/en/">Technical University of Munich</a>, specializing in Computer Engineering and Operations. I have a Bachelor of Science in Industrial Engineering from <a href="https://www.metu.edu.tr/">Middle East Technical University</a>, with coursework spanning operations research and mathematical optimization.</p>
 
       <p>Before moving to Munich, I worked as a business analyst in the product management team on pricing and transfer optimization products. I also spent some time in research during my undergraduate years. I want to keep working on problems that are uncertain enough to be interesting and real enough that someone has to act on the answer.</p>
 
@@ -272,15 +244,34 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
       <h3>Interests</h3>
       <ul class="interests">
         <li>Optimization</li>
-        <li>Artificial intelligence</li>
         <li>Decision-making under uncertainty</li>
+        <li>Operations research</li>
+        <li>Artificial intelligence</li>
         <li>Decision science</li>
         <li>Analytics</li>
-        <li>Operations research</li>
       </ul>
 
       <h3>Work</h3>
 
+      <details class="entry">
+        <summary>
+          <div>
+            <span class="e-title">Dynamic planning of shared scooter field operations</span>
+            <p class="meta">Senior System Design Project in partnership with <a href="https://hop.bike/en/">Hop Teknoloji</a>, METU Industrial Engineering, 2024–2025.</p>
+          </div>
+        </summary>
+        <div class="e-body">
+          <p>In free-floating micromobility, vehicle availability is produced in the field rather than designed into the system. Scooters are left wherever trips end, batteries drain independently of location, and the operator restores the fleet shift by shift. In practice that means deciding, every shift, which scooter to touch, in what order, and on which route, and the field teams were making those calls by eye.</p>
+ 
+          <p>Our six-person team built a decision support system that selects the tasks worth doing in a shift and sequences them, replacing manual routing with an optimization-based approach.</p>
+          <p class="metric">
+            <b>+70.4%</b>
+            <span>field productivity in tasks per kilometer driven, and 40% fewer critical battery tasks left unhandled.</span>
+          </p>
+          <p>The system works in three stages and replans as the shift goes. Stations close enough to walk between are grouped with DBSCAN and scored on how full they are, and the ones that need attention become a route through a traveling salesman problem (TSP). Each scooter is then assigned to its nearest station, which turns the map into work clusters. Inside the current cluster, a mixed-integer linear program (MILP) decides which scooters are worth visiting and in what order, trading travel distance against a penalty for leaving a task undone. It solves in a couple of seconds, so the plan is recomputed every time a station is finished, with whatever the map looks like at that moment.</p>
+          <p class="meta"><a href="poster.pdf">Poster (in Turkish)</a></p>
+        </div>
+      </details>
       <details class="entry">
         <summary>
           <div>
@@ -294,7 +285,6 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
           <p>This work was funded by the Scientific and Technological Research Council of Türkiye (TÜBİTAK) under the 2247-C Intern Researcher Scholarship Program.</p>
         </div>
       </details>
-
       <details class="entry">
         <summary>
           <div>
@@ -308,49 +298,6 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
           <p>This research was carried out through the Erasmus+ traineeship mobility program.</p>
         </div>
       </details>
-    </section>
-
-    <section class="panel" id="projects" hidden>
-      <h2>Projects</h2>
-
-      <details class="entry">
-        <summary>
-          <div>
-            <span class="e-title">Computing, learning, and playing equilibria in games</span>
-            <p class="meta">A browser game about Nash equilibrium, 2026.</p>
-          </div>
-        </summary>
-        <div class="e-body">
-          <a class="launch" href="https://ozgunezgi.github.io/equilibrium-puzzles/game.html" target="_blank" rel="noopener">
-            <span><b>Equilibrium puzzles</b><span>Open the game in a new tab</span></span>
-            <span class="arr" aria-hidden="true">↗</span>
-          </a>
-          <p>A Nash equilibrium is an outcome in which no player can do better by changing only their own move. The game is built around finding one. Its first part takes small games from the literature, from the Prisoner's Dilemma and Matching Pennies to penalty kicks and Bach or Stravinsky, and asks you to find the cell, or the mix of moves. Every puzzle can also be handed to two learning algorithms, to see whether they reach the same answer just by playing.</p>
-          <p>The second part turns those algorithms into characters. Eight opponents play Rock-Paper-Scissors by hidden rules, and the task is to beat each one and then name its rule. The same characters meet again in an Axelrod-style tournament, and in an evolution mode where strategies that earn more than the average spread through a population, which shows when cooperation survives and when it collapses.</p>
-          <p>Behind the game are <a href="https://github.com/ozgunezgi/equilibrium-puzzles" target="_blank" rel="noopener">notebooks</a> that build each piece step by step and test it against an independent implementation: linear programming for zero-sum games, support enumeration for general games, and three learning rules, fictitious play, regret matching, and Q-learning.</p>
-        </div>
-      </details>
-
-      <details class="entry">
-        <summary>
-          <div>
-            <span class="e-title">Dynamic planning of shared scooter field operations</span>
-            <p class="meta">Senior System Design Project, METU Industrial Engineering, 2024–2025.<br>Six-person team, in partnership with <a href="https://hop.bike/en/">Hop Teknoloji</a>.</p>
-          </div>
-        </summary>
-        <div class="e-body">
-          <p>In free-floating micromobility, vehicle availability is produced in the field rather than designed into the system. Scooters are left wherever trips end, batteries drain independently of location, and the operator restores the fleet shift by shift. In practice that means deciding, every shift, which scooter to touch, in what order, and on which route, and the field teams were making those calls by eye.</p>
- 
-          <p>We built a decision support system that selects the tasks worth doing in a shift and sequences them, replacing manual routing with an optimization-based approach.</p>
-          <p class="metric">
-            <b>+70.4%</b>
-            <span>field productivity in tasks per kilometer driven, and 40% fewer critical battery tasks left unhandled.</span>
-          </p>
-          <p>The system works in three stages and replans as the shift goes. Stations close enough to walk between are grouped with DBSCAN and scored on how full they are, and the ones that need attention become a route through a traveling salesman problem (TSP). Each scooter is then assigned to its nearest station, which turns the map into work clusters. Inside the current cluster, a mixed-integer linear program (MILP) decides which scooters are worth visiting and in what order, trading travel distance against a penalty for leaving a task undone. It solves in a couple of seconds, so the plan is recomputed every time a station is finished, with whatever the map looks like at that moment.</p>
-          <p class="meta"><a href="poster.pdf">Poster (in Turkish)</a></p>
-        </div>
-      </details>
-
     </section>
 
     <section class="panel" id="personal" hidden>
@@ -382,7 +329,7 @@ footer{border-top:1px solid var(--rule);margin-top:3.5rem;padding-top:1.4rem;
       </div>
     </section>
 
-    <footer>Last updated October 2026.</footer>
+    <footer>Last updated November 2026.</footer>
   </main>
 </div>
 
